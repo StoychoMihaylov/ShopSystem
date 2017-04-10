@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using ShopSystem.Models.EntityModels;
 using System;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 
 namespace ShopSystem.Data.Migrations
@@ -51,6 +52,45 @@ namespace ShopSystem.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Laptops.AddOrUpdate(new Laptop[] 
+            {
+                new Laptop()
+                {
+                    ModelName = "Lenovo YOGA(13\")",
+                    Description = $"Get things done on the go with the Yoga 720 (13\").At only 1.3 kg, the stylishly compact Yoga 720 boasts powerful processing, cutting - edge ports, and the convenience and security of an optional fingerprint login. You’ll enjoy stunning visuals and sound, thanks to a 4K display and premium, enhanced speakers.Whether you’re browsing the web, streaming a movie or working on your own creations, we’ve got you covered.",
+                    Memory = "Up to 16GB DDR4",
+                    Storage = "Up to 1TB PCle SSD",
+                    Processor = $"Up to 7th Gen Intel® Core™ i7",
+                    OperationSystem = "Windows 10 Home",
+                    Display = "13.3\" 4K UHD (3840 x 2160) / 13.3\" FHD (1920 x 1080) ",
+                    Graphics = "Intel® HD Graphics 620",
+                    Camera = "HD 720p",
+                    Battery = "Up to 8 hours with FHD display",
+                    Audio = "2 x JBL speakers",
+                    Weight = "1.3kg",
+                    Color = "Platinum Silver / Iron Grey Copper",
+                    Price = 1333M
+                },
+                new Laptop()
+                {
+                    ModelName = "Del Vostro 3568",
+                    Description = "15\" (381mm) laptop ideal for professionals.Featuring a large screen, numeric keypad and essential security features.",
+                    Memory = "8GB DDR4 2400 MHz ",
+                    Storage = "Up to 1 TB",
+                    Processor = "Intel® Core™ i3-6006U Processor (3M Cache, up to 2.00 GHz)",
+                    OperationSystem = "Free(Linux)",
+                    Display = "15\" FHD 1920 x 1080",
+                    Graphics = "Intel® HD Graphics",
+                    Camera = "HD 720p",
+                    Battery = "Up to 7 hours with FHD display",
+                    Audio = "2 speakers",
+                    Weight = "1.7kg",
+                    Color = "Black / Grey / Iron Grey",
+                    Price = 900M
+                }
+            });
+           
         }
 
         private void SetRoleToUser(ShopSystemContext context, string email, string role)

@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#icon{
+    width: 60px;
+    height: 60px;
+}
+
+#laptops {
+    margin: 7px;
+}

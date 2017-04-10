@@ -48,6 +48,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -188,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,7 +204,27 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.js" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\Icons\keyboar.jpg" />
+    <Content Include="Content\Icons\laptop.jpg" />
+    <Content Include="Content\Icons\monitor.jpg" />
+    <Content Include="Content\Img\LenovoYoga\lenovo1.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo2.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo3.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo4.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo5.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo6.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo7.png" />
+    <Content Include="Content\Img\LenovoYoga\lenovo8.png" />
+    <Content Include="Content\Img\logo.png" />
+    <Content Include="Content\Img\office1.jpg" />
+    <Content Include="Content\Img\office2.png" />
+    <Content Include="Content\Img\office3.jpg" />
+    <Content Include="Content\Img\office4.jpg" />
+    <Content Include="Content\jquery.js" />
+    <Content Include="Content\logo-nav.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -241,8 +266,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -264,10 +287,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Laptop\List.cshtml" />
+    <Content Include="Views\Laptop\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -283,6 +307,10 @@
     <ProjectReference Include="..\ShopSystem.Models\ShopSystem.Models.csproj">
       <Project>{6B277F4E-4E91-48DD-A270-D608A64A56ED}</Project>
       <Name>ShopSystem.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopSystem.Services\ShopSystem.Services.csproj">
+      <Project>{45DEED1B-F8B7-4E47-A14D-4AC2B7E5B2BF}</Project>
+      <Name>ShopSystem.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
