@@ -13,6 +13,8 @@ namespace ShopSystem.Data
 
         public virtual DbSet<Laptop> Laptops { get; set; }
 
+        public virtual DbSet<Monitor> Monitors { get; set; }
+
         public static ShopSystemContext Create()
         {
             return new ShopSystemContext();

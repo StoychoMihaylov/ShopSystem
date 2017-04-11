@@ -8,6 +8,7 @@ using System;
 using AutoMapper;
 using ShopSystem.Models.EntityModels;
 using ShopSystem.Models.ViewModels.Laptop;
+using ShopSystem.Models.ViewModels.Monitor;
 
 namespace ShopSystem.App
 {
@@ -30,6 +31,8 @@ namespace ShopSystem.App
             {
                 expression.CreateMap<Laptop, LaptopsVm>();
                 expression.CreateMap<Laptop, DetailsLaptopVm>();
+                expression.CreateMap<Monitor, MonitorsVm>();
+                expression.CreateMap<Monitor, DetailsMonitorVm>();
             });
         }
     }

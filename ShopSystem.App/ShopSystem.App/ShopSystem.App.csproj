@@ -194,6 +194,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +211,8 @@
     <Content Include="Content\Icons\keyboar.jpg" />
     <Content Include="Content\Icons\laptop.jpg" />
     <Content Include="Content\Icons\monitor.jpg" />
+    <Content Include="Content\Img\office1.jpg" />
+    <Content Include="Content\Img\office3.jpg" />
     <Content Include="Content\Img\LenovoYoga\lenovo1.png" />
     <Content Include="Content\Img\LenovoYoga\lenovo2.png" />
     <Content Include="Content\Img\LenovoYoga\lenovo3.png" />
@@ -218,11 +221,7 @@
     <Content Include="Content\Img\LenovoYoga\lenovo6.png" />
     <Content Include="Content\Img\LenovoYoga\lenovo7.png" />
     <Content Include="Content\Img\LenovoYoga\lenovo8.png" />
-    <Content Include="Content\Img\logo.png" />
-    <Content Include="Content\Img\office1.jpg" />
-    <Content Include="Content\Img\office2.png" />
-    <Content Include="Content\Img\office3.jpg" />
-    <Content Include="Content\Img\office4.jpg" />
+    <Content Include="Content\Img\logo\logo.png" />
     <Content Include="Content\jquery.js" />
     <Content Include="Content\logo-nav.css" />
     <Content Include="favicon.ico" />
@@ -289,6 +288,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Laptop\List.cshtml" />
     <Content Include="Views\Laptop\Details.cshtml" />
+    <Content Include="Views\Monitor\List.cshtml" />
+    <Content Include="Views\Monitor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

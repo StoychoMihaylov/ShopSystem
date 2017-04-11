@@ -46,6 +46,14 @@ namespace ShopSystem.Data.UnitOfWork
             }
         }
 
+        public IRepository<Monitor> Monitors
+        {
+            get
+            {
+                return this.GetRepository<Monitor>();
+            }
+        }
+
         public IUserStore<ApplicationUser> UserStore
         {
             get

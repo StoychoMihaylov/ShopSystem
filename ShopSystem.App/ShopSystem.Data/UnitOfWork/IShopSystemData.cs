@@ -8,5 +8,7 @@ namespace ShopSystem.Data.UnitOfWork
         IRepository<ApplicationUser> Users { get; }
 
         IRepository<Laptop> Laptops { get; }
+
+        IRepository<Monitor> Monitors { get; }
     }
 }

@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Laptop.cs" />
+    <Compile Include="EntityModels\Monitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
@@ -123,6 +124,8 @@
     <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Monitor\DetailsMonitorVm.cs" />
+    <Compile Include="ViewModels\Monitor\MonitorsVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BindingModels\" />
