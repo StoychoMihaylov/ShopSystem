@@ -1,0 +1,69 @@
+﻿@model ShopSystem.Models.ViewModels.Monitor.DetailsMonitorVm
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="container">
+    <h2>Monitor details:</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.ModelName)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.ModelName)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.Description)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.Description)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.LCDSize)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.LCDSize)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.Resolution)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.Resolution)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.AspectRatio)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.AspectRatio)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.PixelPitch)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.PixelPitch)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.USBHub)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.USBHub)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.InputConnector)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.InputConnector)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.VESA)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.VESA)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.AutoGameMode)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.AutoGameMode)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.LowBlueLight)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.LowBlueLight)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.FilterFreeTechnology)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.FilterFreeTechnology)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.Price)</th>
+                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.Price)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+@Html.ActionLink("Back", "List", "Monitor", new { @class = "btn btn-lg btn-primary" })
+

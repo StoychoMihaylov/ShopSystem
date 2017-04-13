@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace ShopSystem.App.Controllers
 {
-
     public class HomeController : Controller
     {
-        [Route("Index")]
+        [Route("home/index")]
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 }

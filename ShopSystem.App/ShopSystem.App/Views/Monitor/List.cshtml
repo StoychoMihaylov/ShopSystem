@@ -1,0 +1,28 @@
+﻿@model  IEnumerable<ShopSystem.Models.ViewModels.Monitor.MonitorsVm>
+@{
+    ViewBag.Title = "Monitors";
+}
+
+<h2>Monitors</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var vm in Model)
+        {
+
+            <div class="col-sm-3" id="laptops">
+                @Html.DisplayNameFor(monitorVm => monitorVm.ModelName):
+                @Html.DisplayFor(vms => vm.ModelName)
+                <br>
+                @Html.DisplayNameFor(monitorVm => monitorVm.Price):
+                @Html.DisplayFor(vms => vm.Price)
+                <br>
+               @Html.ActionLink("More details", "Details", "Monitor", new { id = vm.Id }, new { @class = "link" })
+            </div>
+        }
+    </div>
+</div>
+@Html.ActionLink("Back", "Index", "Home", new { area = "" }, new { @class = "btn btn-lg btn-primary" })
+
+
+

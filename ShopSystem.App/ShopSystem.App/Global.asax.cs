@@ -10,6 +10,7 @@ using ShopSystem.Models.EntityModels;
 using ShopSystem.Models.ViewModels.Laptop;
 using ShopSystem.Models.ViewModels.Monitor;
 
+
 namespace ShopSystem.App
 {
     public class MvcApplication : System.Web.HttpApplication

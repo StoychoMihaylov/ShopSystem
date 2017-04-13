@@ -31,3 +31,7 @@ textarea {
 #laptops {
     margin: 7px;
 }
+
+.bordered {
+     border: 1px solid black;
+}
