@@ -12,6 +12,7 @@ using ShopSystem.Data.UnitOfWork;
 namespace ShopSystem.App.Controllers
 {
     [Authorize]
+    [RoutePrefix("Account")]
     public class AccountController : BaseController
     {
         private ApplicationSignInManager _signInManager;
@@ -51,6 +52,8 @@ namespace ShopSystem.App.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+        [Route("login")]
+
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -62,6 +65,8 @@ namespace ShopSystem.App.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("login")]
+
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -133,6 +138,7 @@ namespace ShopSystem.App.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
+        [Route("Register")]
         public ActionResult Register()
         {
             return View();
@@ -143,6 +149,7 @@ namespace ShopSystem.App.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("Register")]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -386,6 +393,7 @@ namespace ShopSystem.App.Controllers
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Logoff")]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

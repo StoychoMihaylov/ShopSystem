@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ShopSystem.Models.ViewModels.Admin.AdminLaptopsVm>
+@{
+    ViewBag.Title = "Laptops";
+}
+
+<h1>Admin Panel</h1>
+
+<hr>
+<h2>Laptops</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var vm in Model)
+        {
+
+            <div class="col-sm-3" id="laptops">
+                @Html.DisplayNameFor(laptopVm => laptopVm.ModelName):
+                @Html.DisplayFor(vms => vm.ModelName)
+                <br>
+                @Html.DisplayNameFor(laptopVm => laptopVm.Price):
+                @Html.DisplayFor(vms => vm.Price)
+                <br>
+                @Html.ActionLink("More details", "AdminDetailsLaptop", "AdminLaptopsList", new { id = vm.Id }, new { @class = "link" })
+            </div>
+        }
+    </div>
+</div>
+@Html.ActionLink("Back", "Action", "Admin", new { area = "" }, new { @class = "btn btn-lg btn-primary" })
+

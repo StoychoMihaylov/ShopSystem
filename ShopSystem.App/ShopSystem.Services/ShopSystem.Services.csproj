@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminService.cs" />
     <Compile Include="LaptopsService.cs" />
     <Compile Include="MonitorsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

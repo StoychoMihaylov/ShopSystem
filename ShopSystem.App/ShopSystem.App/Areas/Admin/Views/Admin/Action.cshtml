@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin Panel";
+}
+
+<h1>Admin Panel</h1>
+
+<hr>
+<h2>Add/Edit/Delete Laptops</h2>
+@Html.ActionLink("Add/Edit/Delete Laptops", "AdminLaptopsList", "admin", new { area = "" }, new { @class = "btn btn-lg btn-primary"})
+<hr>
+<h2>Add/Edit/Delete Monitors<h2>
+@Html.ActionLink("Add/Edit/Delete Monitors", "Monitors", "Action", new { area = "" }, new { @class = "btn btn-lg btn-primary" })
+<hr>
+<h2>Add/Edit/Delete Accessories</h2>
+@Html.ActionLink("Add/Edit/Delete Accessoaries", "Accessoaries", "Action", new { area = "" }, new { @class = "btn btn-lg btn-primary" })
+

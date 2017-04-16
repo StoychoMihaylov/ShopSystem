@@ -1,0 +1,58 @@
+﻿@model ShopSystem.Models.BindingModels.AddLaptopBm
+@{
+  
+    ViewBag.Title = "Add Laptop";
+}
+
+<h2>Add Laptop</h2>
+
+@using (Html.BeginForm("Add", "Laptop", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.LabelFor(m => m.ModelName, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.ModelName, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Description, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Memory, new { @class = "col-md-2 control-label"})
+    @Html.TextBoxFor(m => m.Memory, new { @class = "form-control"})
+    <br>
+    @Html.LabelFor(s => s.Storage, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(s => s.Storage, new { @class = "form-control"})
+    <br>
+    @Html.LabelFor(p => p.Processor, new { @class = "col-md-2 control-label"})
+    @Html.TextBoxFor(p => p.Processor, new { @class = "form-control"})
+    <br>
+    @Html.LabelFor(o => o.OperationSystem, new { @class = "col-md-2 control-label"})
+    @Html.TextBoxFor(o => o.OperationSystem, new { @class = "form-control"})
+    <br>
+    @Html.LabelFor(d => d.Display, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Display, new { @class = "form-control"})
+    <br>
+    @Html.LabelFor(d => d.Graphics, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Graphics, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Camera, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Camera, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Battery, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Battery, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Audio, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Audio, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Weight, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Weight, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Color, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Color, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Price, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(d => d.Price, new { @class = "form-control" })
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="add" />
+        </div>
+    </div>
+}

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopSystem.Models.EntityModels
+namespace ShopSystem.Models.ViewModels.Admin
 {
-    public class Laptop
+    public class AdminDetailsLaptopsVm
     {
         public int Id { get; set; }
 
@@ -42,15 +42,5 @@ namespace ShopSystem.Models.EntityModels
         public string Color { get; set; }
 
         public decimal Price { get; set; }
-
-        public byte[] Image1 { get; set; }
-
-        public byte[] Image2 { get; set; }
-
-        public byte[] Image3 { get; set; }
-
-        public byte[] Image4 { get; set; }
-
-        public byte[] Image5 { get; set; }
     }
 }

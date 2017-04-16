@@ -4,11 +4,11 @@ using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System;
 using AutoMapper;
 using ShopSystem.Models.EntityModels;
 using ShopSystem.Models.ViewModels.Laptop;
 using ShopSystem.Models.ViewModels.Monitor;
+using ShopSystem.Models.ViewModels.Admin;
 
 
 namespace ShopSystem.App
@@ -34,6 +34,8 @@ namespace ShopSystem.App
                 expression.CreateMap<Laptop, DetailsLaptopVm>();
                 expression.CreateMap<Monitor, MonitorsVm>();
                 expression.CreateMap<Monitor, DetailsMonitorVm>();
+                expression.CreateMap<Laptop, AdminLaptopsVm>();
+                expression.CreateMap<Laptop, AdminDetailsLaptopsVm>();
             });
         }
     }

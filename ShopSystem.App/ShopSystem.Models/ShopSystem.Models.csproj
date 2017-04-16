@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\AddLaptopBm.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Laptop.cs" />
     <Compile Include="EntityModels\Monitor.cs" />
@@ -114,6 +115,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminDetailsLaptopsVm.cs" />
+    <Compile Include="ViewModels\Admin\AdminLaptopsVm.cs" />
     <Compile Include="ViewModels\Laptop\DetailsLaptopVm.cs" />
     <Compile Include="ViewModels\Laptop\LaptopsVm.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
@@ -127,9 +130,7 @@
     <Compile Include="ViewModels\Monitor\DetailsMonitorVm.cs" />
     <Compile Include="ViewModels\Monitor\MonitorsVm.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BindingModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
