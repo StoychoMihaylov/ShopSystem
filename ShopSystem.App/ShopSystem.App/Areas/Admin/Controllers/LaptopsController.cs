@@ -22,7 +22,7 @@ namespace ShopSystem.App.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Route("AdminLaptopsList")]
+        [Route("List")]
 
         public ActionResult AdminLaptopsList()
         {
@@ -31,7 +31,7 @@ namespace ShopSystem.App.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Route("AdminDetailsLaptop/{id}")]
+        [Route("Details/{id}")]
 
         public ActionResult AdminDetailsLaptop(int id)
         {
@@ -57,7 +57,7 @@ namespace ShopSystem.App.Areas.Admin.Controllers
         {
             if (this.ModelState.IsValid)
             {
-             
+                this.service.AddNewLaptop(bind);
                 return RedirectToAction("AdminLaptopsList");
             }
 

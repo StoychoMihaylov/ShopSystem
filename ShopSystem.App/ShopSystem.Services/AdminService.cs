@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ShopSystem.Models.ViewModels.Admin;
 using ShopSystem.Models.EntityModels;
 using AutoMapper;
+using ShopSystem.Models.BindingModels;
 
 namespace ShopSystem.Services
 {
@@ -29,6 +30,13 @@ namespace ShopSystem.Services
 
             AdminDetailsLaptopsVm vms = Mapper.Map<Laptop, AdminDetailsLaptopsVm>(laptop);
             return vms;
+        }
+
+        public void AddNewLaptop(AddLaptopBm bind)
+        {
+            Laptop model = Mapper.Map<AddLaptopBm, Laptop>(bind);
+            this.Context.Laptops.Add(model);
+            this.Context.SaveChanges();
         }
     }
 }

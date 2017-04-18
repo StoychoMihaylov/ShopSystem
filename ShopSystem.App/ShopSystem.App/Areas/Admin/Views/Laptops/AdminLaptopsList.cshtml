@@ -20,7 +20,7 @@
                 @Html.DisplayNameFor(laptopVm => laptopVm.Price):
                 @Html.DisplayFor(vms => vm.Price)
                 <br>
-                @Html.ActionLink("More details", "AdminDetailsLaptop", "AdminLaptopsList", new { id = vm.Id }, new { @class = "link" })
+                @Html.ActionLink("More details", "Details", "List", new { id = vm.Id }, new { @class = "link"})
             </div>
         }
     </div>
