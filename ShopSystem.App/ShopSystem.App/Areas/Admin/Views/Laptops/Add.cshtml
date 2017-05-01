@@ -6,13 +6,25 @@
 
 <h2>Add Laptop</h2>
 
-@using (Html.BeginForm("Add", "Laptop", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Add", "Laptop", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
 {
     @Html.LabelFor(m => m.ModelName, new { @class = "col-md-2 control-label" })
     @Html.TextBoxFor(m => m.ModelName, new { @class = "form-control" })
     <br>
-    @Html.LabelFor(d => d.Description, new { @class = "col-md-2 control-label" })
-    @Html.TextAreaFor(d => d.Description, new { @class = "form-control" })
+    @Html.LabelFor(d => d.Description1, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description1, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Description2, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description2, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Description3, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description3, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Description4, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description4, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(d => d.Description5, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description5, new { @class = "form-control" })
     <br>
     @Html.LabelFor(m => m.Memory, new { @class = "col-md-2 control-label"})
     @Html.TextBoxFor(m => m.Memory, new { @class = "form-control"})
@@ -50,9 +62,22 @@
     @Html.LabelFor(d => d.Price, new { @class = "col-md-2 control-label" })
     @Html.TextBoxFor(d => d.Price, new { @class = "form-control" })
     <br>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        <table>
+            <tr><td>Image1</td><td><input type="file" id="images" name="images"/></td></tr>
+            <tr><td>Image2</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image3</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image4</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image5</td><td><input type="file" id="images" name="images" /></td></tr>
+        </table>
+    </div>  
+    <br>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="add" />
+            <input type="submit" class="submit" value="add" />
         </div>
     </div>
+    @Html.ActionLink("Back", "List","Admin",new { area = ""}, new { @class = "btn btn-lg btn-primary" })
 }

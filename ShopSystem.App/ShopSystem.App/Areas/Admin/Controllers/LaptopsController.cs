@@ -4,9 +4,13 @@ using ShopSystem.Models.ViewModels.Admin;
 using ShopSystem.Services;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ShopSystem.App.Areas.Admin.Controllers
 {
@@ -53,11 +57,25 @@ namespace ShopSystem.App.Areas.Admin.Controllers
 
         [HttpPost]
         [Route("Laptop/Add")]
-        public ActionResult Add(AddLaptopBm bind)
+        public ActionResult Add(AddLaptopBm bind, IEnumerable<HttpPostedFileBase> images)
         {
             if (this.ModelState.IsValid)
             {
-                this.service.AddNewLaptop(bind);
+                foreach (var img in images)
+                {
+                    if (img.ContentLength > (5 * 1024 * 1024))
+                    {
+                        ModelState.AddModelError("CustomError", "File size must be less than 5 MB");
+                        return View();
+                    }
+                    if (img.ContentType != "image/jpeg")
+                    {
+                        ModelState.AddModelError("CustomError", "File type must be \"jpeg\"");
+                        return View();
+                    }
+                }
+                this.service.AddNewLaptop(bind, images);
+
                 return RedirectToAction("AdminLaptopsList");
             }
 

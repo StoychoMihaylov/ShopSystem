@@ -6,7 +6,7 @@
 <h1>Admin Panel</h1>
 
 <hr>
-<h2>Laptops</h2>
+<h2>Laptops / @Html.ActionLink("Add Laptop", "Add", "Laptop", new { @class = "link"})</h2>
 
 <div class="container">
     <div class="row">
@@ -14,13 +14,18 @@
         {
 
             <div class="col-sm-3" id="laptops">
+                @{
+                    var base64 = Convert.ToBase64String(vm.Image1);
+                    var imgsrc = string.Format("data:image/gif;base64, {0}", base64);
+                }
+                <img id="picture" src="@imgsrc">
                 @Html.DisplayNameFor(laptopVm => laptopVm.ModelName):
                 @Html.DisplayFor(vms => vm.ModelName)
                 <br>
                 @Html.DisplayNameFor(laptopVm => laptopVm.Price):
                 @Html.DisplayFor(vms => vm.Price)
                 <br>
-                @Html.ActionLink("More details", "Details", "List", new { id = vm.Id }, new { @class = "link"})
+                @Html.ActionLink("More details", "Details", "Admin", new { id = vm.Id }, new { @class = "link" })
             </div>
         }
     </div>

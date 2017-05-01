@@ -216,14 +216,6 @@
     <Content Include="Content\Icons\monitor.jpg" />
     <Content Include="Content\Img\office1.jpg" />
     <Content Include="Content\Img\office3.jpg" />
-    <Content Include="Content\Img\LenovoYoga\lenovo1.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo2.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo3.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo4.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo5.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo6.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo7.png" />
-    <Content Include="Content\Img\LenovoYoga\lenovo8.png" />
     <Content Include="Content\Img\logo\logo.png" />
     <Content Include="Content\jquery.js" />
     <Content Include="Content\logo-nav.css" />
@@ -308,7 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

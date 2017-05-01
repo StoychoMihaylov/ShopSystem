@@ -16,5 +16,7 @@ namespace ShopSystem.Models.ViewModels.Admin
         public string ModelName { get; set; }
 
         public decimal Price { get; set; }
+
+        public byte[] Image1 { get; set; }
     }
 }

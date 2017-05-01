@@ -15,7 +15,15 @@ namespace ShopSystem.Models.ViewModels.Laptop
 
         public string ModelName { get; set; }
 
-        public string Description { get; set; }
+        public string Description1 { get; set; }
+
+        public string Description2 { get; set; }
+
+        public string Description3 { get; set; }
+
+        public string Description4 { get; set; }
+
+        public string Description5 { get; set; }
 
         public string Memory { get; set; }
 
@@ -43,6 +51,14 @@ namespace ShopSystem.Models.ViewModels.Laptop
 
         public decimal Price { get; set; }
 
-        public byte[] Image { get; set; }
+        public byte[] Image1 { get; set; }
+
+        public byte[] Image2 { get; set; }
+
+        public byte[] Image3 { get; set; }
+
+        public byte[] Image4 { get; set; }
+
+        public byte[] Image5 { get; set; }
     }
 }

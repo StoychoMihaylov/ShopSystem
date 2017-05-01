@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ShopSystem.Models.EntityModels
 {
@@ -15,7 +16,15 @@ namespace ShopSystem.Models.EntityModels
 
         public string ModelName { get; set; }
 
-        public string Description { get; set; }
+        public string Description1 { get; set; }
+
+        public string Description2 { get; set; }
+
+        public string Description3 { get; set; }
+
+        public string Description4 { get; set; }
+
+        public string Description5 { get; set; }
 
         public string Memory { get; set; }
 
@@ -47,7 +56,7 @@ namespace ShopSystem.Models.EntityModels
 
         public byte[] Image2 { get; set; }
 
-        public byte[] Image3 { get; set; }
+        public byte[] Image3 { get; set; }    
 
         public byte[] Image4 { get; set; }
 
