@@ -1,69 +1,161 @@
 ﻿@model ShopSystem.Models.ViewModels.Monitor.DetailsMonitorVm
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Monitor Details";
 }
 
-<h2>Details</h2>
-
 <div class="container">
-    <h2>Monitor details:</h2>
+    <h2>Monitor details: @Model.ModelName</h2>
+    <div class="row">
+        <div class="col-sm-3 pull-left" id="monitors">
+            @{
+                var base64image1 = Convert.ToBase64String(Model.Image1);
+                var img1src = string.Format("data:image/gif;base64, {0}", base64image1);
+            }
+            <img id="DetailsPicture" src="@img1src" />
+        </div>
+        <div class="col-sm-2 pull-right">
+            <p>
+                @Model.Description1
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-2 pull-left">
+            <p>
+                @Model.Description2
+            </p>
+        </div>
+        <div class="col-sm-3 pull-right" id="laptops">
+            @{
+                var base64iamge2 = Convert.ToBase64String(Model.Image2);
+                var img2src = string.Format("data:image/gif;base64, {0}", base64iamge2);
+            }
+            <img id="DetailsPicture" src="@img2src" />
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-3 pull-left" id="laptops">
+            @{
+                var base64iamge3 = Convert.ToBase64String(Model.Image3);
+                var img3src = string.Format("data:image/gif;base64, {0}", base64iamge3);
+            }
+            <img id="DetailsPicture" src="@img3src" />
+        </div>
+        <div class="col-sm-2 pull-right">
+            <p>
+                @Model.Description3
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-2 pull-left">
+            <p>
+                @Model.Description4
+            </p>
+        </div>
+        <div class="col-sm-3 pull-right" id="laptops">
+            @{
+                var base64iamge4 = Convert.ToBase64String(Model.Image4);
+                var img4src = string.Format("data:image/gif;base64, {0}", base64iamge4);
+            }
+            <img id="DetailsPicture" src="@img4src" />
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-3 pull-left" id="laptops">
+            @{
+                var base64iamge5 = Convert.ToBase64String(Model.Image5);
+                var img5src = string.Format("data:image/gif;base64, {0}", base64iamge5);
+            }
+            <img id="DetailsPicture" src="@img5src" />
+        </div>
+        <div class="col-sm-2 pull-right">
+            <p>
+                @Model.Description5
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <table class="table table-bordered">
         <tbody>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.ModelName)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.ModelName)</td>
+                <th>@Html.DisplayNameFor(vm => vm.ModelName)</th>
+                <td>@Html.DisplayFor(vm => vm.ModelName)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.Description)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.Description)</td>
+                <th>@Html.DisplayNameFor(vm => vm.LCDSize)</th>
+                <td>@Html.DisplayFor(vm => vm.LCDSize)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.LCDSize)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.LCDSize)</td>
+                <th>@Html.DisplayNameFor(vm => vm.Resolution)</th>
+                <td>@Html.DisplayFor(vm => vm.Resolution)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.Resolution)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.Resolution)</td>
+                <th>@Html.DisplayNameFor(vm => vm.AspectRatio)</th>
+                <td>@Html.DisplayFor(vm => vm.AspectRatio)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.AspectRatio)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.AspectRatio)</td>
+                <th>@Html.DisplayNameFor(vm => vm.PixelPitch)</th>
+                <td>@Html.DisplayFor(vm => vm.PixelPitch)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.PixelPitch)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.PixelPitch)</td>
+                <th>@Html.DisplayNameFor(vm => vm.USBHub)</th>
+                <td>@Html.DisplayFor(vm => vm.USBHub)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.USBHub)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.USBHub)</td>
+                <th>@Html.DisplayNameFor(vm => vm.InputConnector)</th>
+                <td>@Html.DisplayFor(vm => vm.InputConnector)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.InputConnector)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.InputConnector)</td>
+                <th>@Html.DisplayNameFor(vm => vm.IncludedSignalCable)</th>
+                <td>@Html.DisplayFor(vm => vm.IncludedSignalCable)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.VESA)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.VESA)</td>
+                <th>@Html.DisplayNameFor(vm => vm.VESA)</th>
+                <td>@Html.DisplayFor(vm => vm.VESA)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.AutoGameMode)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.AutoGameMode)</td>
+                <th>@Html.DisplayNameFor(vm => vm.AutoGameMode)</th>
+                <td>@Html.DisplayFor(vm => vm.AutoGameMode)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.LowBlueLight)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.LowBlueLight)</td>
+                <th>@Html.DisplayNameFor(vm => vm.LowBlueLight)</th>
+                <td>@Html.DisplayFor(vm => vm.LowBlueLight)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.FilterFreeTechnology)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.FilterFreeTechnology)</td>
+                <th>@Html.DisplayNameFor(vm => vm.FilterFreeTechnology)</th>
+                <td>@Html.DisplayFor(vm => vm.FilterFreeTechnology)</td>
             </tr>
             <tr>
-                <th>@Html.DisplayNameFor(DetailsLaptopVm => DetailsLaptopVm.Price)</th>
-                <td>@Html.DisplayFor(DetailsLaptopVm => DetailsLaptopVm.Price)</td>
+                <th>@Html.DisplayNameFor(vm => vm.Color)</th>
+                <td>@Html.DisplayFor(vm => vm.Color)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(vm => vm.Price)</th>
+                <td>@Html.DisplayFor(vm => vm.Price)</td>
             </tr>
         </tbody>
     </table>
 </div>
+
 <br>
 @Html.ActionLink("Back", "List", "Monitor", new { @class = "btn btn-lg btn-primary" })
-

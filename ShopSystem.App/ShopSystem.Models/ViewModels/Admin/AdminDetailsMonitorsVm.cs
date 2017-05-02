@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopSystem.Models.EntityModels
+namespace ShopSystem.Models.ViewModels.Admin
 {
-    public class Monitor
+    public class AdminDetailsMonitorsVm
     {
         public int Id { get; set; }
 

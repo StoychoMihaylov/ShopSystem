@@ -25,21 +25,41 @@ namespace ShopSystem.Services
             return vms;
         }
 
-        public AdminDetailsLaptopsVm GetLaptopDetails(int id)
+        public IEnumerable<AdminMonitorsVm> GetAllMonitors()
         {
-            Laptop laptop = this.Context.Laptops.Find(id);
-            if (id == null)
+            IEnumerable<Monitor> monitors = this.Context.Monitors;
+            IEnumerable<AdminMonitorsVm> vms = Mapper.Map<IEnumerable<Monitor>, IEnumerable<AdminMonitorsVm>>(monitors);
+
+            return vms;
+        }
+
+        public AdminDetailsMonitorsVm GetMonitorDetals(int id)
+        {
+            Monitor monitor = this.Context.Monitors.Find(id);
+            if (monitor == null)
             {
                 return null;
             }
 
-            AdminDetailsLaptopsVm vms = Mapper.Map<Laptop, AdminDetailsLaptopsVm>(laptop);
-            return vms;
+            AdminDetailsMonitorsVm vm = Mapper.Map<Monitor, AdminDetailsMonitorsVm>(monitor);
+            return vm;
+        }
+
+        public AdminDetailsLaptopsVm GetLaptopDetails(int id)
+        {
+            Laptop laptop = this.Context.Laptops.Find(id);
+            if (laptop == null)
+            {
+                return null;
+            }
+
+            AdminDetailsLaptopsVm vm = Mapper.Map<Laptop, AdminDetailsLaptopsVm>(laptop);
+            return vm;
         }
 
         public void AddNewLaptop(AddLaptopBm bind, IEnumerable<HttpPostedFileBase> images)
         {
-            Laptop model = Mapper.Map<AddLaptopBm, Laptop>(bind);
+            Laptop laptop = Mapper.Map<AddLaptopBm, Laptop>(bind);
             int i = 1;
             foreach (var img in images)
             {
@@ -48,30 +68,68 @@ namespace ShopSystem.Services
                         switch (i)
                         {
                             case 1:
-                                model.Image1 = new byte[img.ContentLength];
-                                img.InputStream.Read(model.Image1, 0, img.ContentLength);
+                                laptop.Image1 = new byte[img.ContentLength];
+                                img.InputStream.Read(laptop.Image1, 0, img.ContentLength);
                                 break;
                             case 2:
-                                model.Image2 = new byte[img.ContentLength];
-                                img.InputStream.Read(model.Image2, 0, img.ContentLength);
+                                laptop.Image2 = new byte[img.ContentLength];
+                                img.InputStream.Read(laptop.Image2, 0, img.ContentLength);
                                 break;
                             case 3:
-                                model.Image3 = new byte[img.ContentLength];
-                                img.InputStream.Read(model.Image3, 0, img.ContentLength);
+                                laptop.Image3 = new byte[img.ContentLength];
+                                img.InputStream.Read(laptop.Image3, 0, img.ContentLength);
                                 break;
                             case 4:
-                                model.Image4 = new byte[img.ContentLength];
-                                img.InputStream.Read(model.Image4, 0, img.ContentLength);
+                                laptop.Image4 = new byte[img.ContentLength];
+                                img.InputStream.Read(laptop.Image4, 0, img.ContentLength);
                                 break;
                             case 5:
-                                model.Image5 = new byte[img.ContentLength];
-                                img.InputStream.Read(model.Image5, 0, img.ContentLength);
+                                laptop.Image5 = new byte[img.ContentLength];
+                                img.InputStream.Read(laptop.Image5, 0, img.ContentLength);
                                 break;
                         }
                     i++;
                 }
             }           
-            this.Context.Laptops.Add(model);
+            this.Context.Laptops.Add(laptop);
+            this.Context.SaveChanges();
+        }
+
+        public void AddNewMonitor(AddMonitorBm bind, IEnumerable<HttpPostedFileBase> images)
+        {
+            Monitor monitor = Mapper.Map<AddMonitorBm, Monitor>(bind);
+            int i = 1;
+            foreach (var img in images)
+            {
+                if (img != null)
+                {
+                    switch (i)
+                    {
+                        case 1:
+                            monitor.Image1 = new byte[img.ContentLength];
+                            img.InputStream.Read(monitor.Image1, 0, img.ContentLength);
+                            break;
+                        case 2:
+                            monitor.Image2 = new byte[img.ContentLength];
+                            img.InputStream.Read(monitor.Image2, 0, img.ContentLength);
+                            break;
+                        case 3:
+                            monitor.Image3 = new byte[img.ContentLength];
+                            img.InputStream.Read(monitor.Image3, 0, img.ContentLength);
+                            break;
+                        case 4:
+                            monitor.Image4 = new byte[img.ContentLength];
+                            img.InputStream.Read(monitor.Image4, 0, img.ContentLength);
+                            break;
+                        case 5:
+                            monitor.Image5 = new byte[img.ContentLength];
+                            img.InputStream.Read(monitor.Image5, 0, img.ContentLength);
+                            break;
+                    }
+                    i++;
+                }
+            }
+            this.Context.Monitors.Add(monitor);
             this.Context.SaveChanges();
         }
     }

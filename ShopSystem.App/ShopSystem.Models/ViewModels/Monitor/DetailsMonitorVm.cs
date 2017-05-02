@@ -15,7 +15,15 @@ namespace ShopSystem.Models.ViewModels.Monitor
 
         public string ModelName { get; set; }
 
-        public string Description { get; set; }
+        public string Description1 { get; set; }
+
+        public string Description2 { get; set; }
+
+        public string Description3 { get; set; }
+
+        public string Description4 { get; set; }
+
+        public string Description5 { get; set; }
 
         [Display(Name = "LCD Size")]
 
@@ -57,6 +65,18 @@ namespace ShopSystem.Models.ViewModels.Monitor
 
         public string FilterFreeTechnology { get; set; }
 
+        public string Color { get; set; }
+
         public decimal Price { get; set; }
+
+        public byte[] Image1 { get; set; }
+
+        public byte[] Image2 { get; set; }
+
+        public byte[] Image3 { get; set; }
+
+        public byte[] Image4 { get; set; }
+
+        public byte[] Image5 { get; set; }
     }
 }

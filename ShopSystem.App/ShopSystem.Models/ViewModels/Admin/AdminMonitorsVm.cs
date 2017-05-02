@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopSystem.Models.ViewModels.Monitor
+namespace ShopSystem.Models.ViewModels.Admin
 {
-    public class MonitorsVm
+    public class AdminMonitorsVm
     {
         public int Id { get; set; }
 
@@ -18,6 +18,5 @@ namespace ShopSystem.Models.ViewModels.Monitor
         public decimal Price { get; set; }
 
         public byte[] Image1 { get; set; }
-      
     }
 }

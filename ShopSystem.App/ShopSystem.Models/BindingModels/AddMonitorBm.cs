@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopSystem.Models.EntityModels
+namespace ShopSystem.Models.BindingModels
 {
-    public class Monitor
+    public class AddMonitorBm
     {
-        public int Id { get; set; }
-
         [Display(Name = "Model")]
 
         public string ModelName { get; set; }

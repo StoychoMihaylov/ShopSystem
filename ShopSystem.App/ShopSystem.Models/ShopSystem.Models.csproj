@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingModels\AddLaptopBm.cs" />
+    <Compile Include="BindingModels\AddMonitorBm.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Laptop.cs" />
     <Compile Include="EntityModels\Monitor.cs" />
@@ -117,7 +118,9 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Admin\AdminDetailsLaptopsVm.cs" />
+    <Compile Include="ViewModels\Admin\AdminDetailsMonitorsVm.cs" />
     <Compile Include="ViewModels\Admin\AdminLaptopsVm.cs" />
+    <Compile Include="ViewModels\Admin\AdminMonitorsVm.cs" />
     <Compile Include="ViewModels\Laptop\DetailsLaptopVm.cs" />
     <Compile Include="ViewModels\Laptop\LaptopsVm.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />

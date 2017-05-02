@@ -1,0 +1,86 @@
+﻿@model ShopSystem.Models.BindingModels.AddMonitorBm
+@{
+
+    ViewBag.Title = "Add Monitor";
+}
+
+<h2>Add Laptop</h2>
+
+@using (Html.BeginForm("Add", "Monitor", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.ModelName, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.ModelName, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Description1, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(d => d.Description1, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Description2, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(m => m.Description2, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Description3, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(m => m.Description3, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Description4, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(m => m.Description4, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Description5, new { @class = "col-md-2 control-label" })
+    @Html.TextAreaFor(m => m.Description5, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.LCDSize, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.LCDSize, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Resolution, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.Resolution, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.AspectRatio, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.AspectRatio, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.PixelPitch, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.PixelPitch, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.USBHub, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.USBHub, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.InputConnector, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.InputConnector, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.IncludedSignalCable , new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.IncludedSignalCable, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.VESA, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.VESA, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.AutoGameMode, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.AutoGameMode, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.LowBlueLight, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.LowBlueLight, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.FilterFreeTechnology, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.FilterFreeTechnology, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Color, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.Color, new { @class = "form-control" })
+    <br>
+    @Html.LabelFor(m => m.Price, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    <br>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        <table>
+            <tr><td>Image1</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image2</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image3</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image4</td><td><input type="file" id="images" name="images" /></td></tr>
+            <tr><td>Image5</td><td><input type="file" id="images" name="images" /></td></tr>
+        </table>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="submit" value="add" />
+        </div>
+    </div>
+    @Html.ActionLink("Back", "Monitors", "Admin", new { area = "" }, new { @class = "btn btn-lg btn-primary" })
+}

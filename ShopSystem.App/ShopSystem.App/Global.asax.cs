@@ -37,6 +37,8 @@ namespace ShopSystem.App
                 expression.CreateMap<Laptop, AdminLaptopsVm>();
                 expression.CreateMap<Laptop, AdminDetailsLaptopsVm>();
                 expression.CreateMap<AddLaptopBm, Laptop>();
+                expression.CreateMap<Monitor, AdminMonitorsVm>();
+                expression.CreateMap<AddMonitorBm, Monitor>();
             });
         }
     }
