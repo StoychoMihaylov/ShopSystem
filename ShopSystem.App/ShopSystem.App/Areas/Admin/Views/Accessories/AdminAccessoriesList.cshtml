@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ShopSystem.Models.ViewModels.Admin.AdminAccessoriesVm>
+
+@{
+    ViewBag.Title = "Accessories";
+}
+
+<h2>Accessories / @Html.ActionLink("Add Accessor", "Add", "Accessor", new { @class = "link" })</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var vm in Model)
+        {
+
+            <div class="col-sm-3" id="laptops">
+                @{
+                    var base64 = Convert.ToBase64String(vm.Image1);
+                    var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                }
+                <img id="picture" src="@imgsrc" />
+                <br>
+                @Html.DisplayNameFor(accessorVm => accessorVm.NameOfProduct):
+                @Html.DisplayFor(vms => vm.NameOfProduct)
+                <br>
+                @Html.DisplayNameFor(accessorVm => accessorVm.ModelName):
+                @Html.DisplayFor(vms => vm.ModelName)
+                <br>
+                @Html.DisplayNameFor(accessorVm => accessorVm.Price):
+                @Html.DisplayFor(vms => vm.Price)
+                <br>
+            </div>
+                    }
+    </div>
+</div>
+@Html.ActionLink("Back", "Index", "Home", new { area = "" }, new { @class = "btn btn-lg btn-primary" })

@@ -1,0 +1,89 @@
+﻿@model ShopSystem.Models.ViewModels.Accessor.DetailsAccessorVm
+@{
+    ViewBag.Title = "Accessor Details";
+}
+
+<div class="container">
+    <h2>Accessor details:@Model.NameOfProduct @Model.ModelName</h2>
+    
+        <div class="row">
+            <div class="col-sm-3 pull-left" id="laptops">
+                @{
+                    var base64image1 = Convert.ToBase64String(Model.Image1);
+                    var img1src = string.Format("data:image/gif;base64, {0}", base64image1);
+                }
+                @if (base64image1 != "")
+                {
+                    <img id="DetailsPicture" src="@img1src" />
+                }             
+            </div>
+            <div class="col-sm-2 pull-right">
+                <p>
+                    @Model.Description1
+                </p>
+            </div>
+        </div>
+ 
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <div class="row">
+            <div class="col-sm-2 pull-left">
+                <p>
+                    @Model.Description2
+                </p>
+            </div>
+            <div class="col-sm-3 pull-right" id="laptops">
+                @{
+                    var base64iamge2 = Convert.ToBase64String(Model.Image2);
+                    var img2src = string.Format("data:image/gif;base64, {0}", base64iamge2);
+                }
+                @if (base64iamge2 != "")
+                {
+                    <img id="DetailsPicture" src="@img2src" />
+                }               
+            </div>
+        </div>
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    @if (Model.Image3 == null)
+    {
+        <div class="row">
+            <div class="col-sm-3 pull-left" id="laptops">
+                @{
+                    var base64iamge3 = Convert.ToBase64String(Model.Image3);
+                    var img3src = string.Format("data:image/gif;base64, {0}", base64iamge3);
+                }
+                @if (base64iamge3 != "")
+                {
+                    <img id="DetailsPicture" src="@img3src" />
+                }                
+            </div>
+            <div class="col-sm-2 pull-right">
+                <p>
+                    @Model.Description3
+                </p>
+            </div>
+        </div>
+    }
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(DetailsAccessorVm => DetailsAccessorVm.ModelName)</th>
+                <td>@Html.DisplayFor(DetailsAccessoarVm => DetailsAccessoarVm.ModelName)</td>
+            </tr>  
+            <tr>      
+                <th>@Html.DisplayNameFor(DetailsAccessorVm => DetailsAccessorVm.Price)</th>
+                <td>@Html.DisplayFor(DetailsAccessorVm => DetailsAccessorVm.Price)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+@Html.ActionLink("Back", "List", "Accessor", new { @class = "btn btn-lg btn-primary" })
