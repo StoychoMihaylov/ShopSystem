@@ -102,6 +102,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessorService.cs" />
     <Compile Include="AdminService.cs" />
     <Compile Include="LaptopsService.cs" />
     <Compile Include="MonitorsService.cs" />

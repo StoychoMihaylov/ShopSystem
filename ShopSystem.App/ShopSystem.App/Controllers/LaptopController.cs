@@ -9,6 +9,7 @@ using System.Web.Mvc;
 namespace ShopSystem.App.Controllers
 {
     [RoutePrefix("Laptops")]
+
     public class LaptopController : Controller
     {
         private LaptopsService service;
@@ -23,6 +24,7 @@ namespace ShopSystem.App.Controllers
         public ActionResult List()
         {
             IEnumerable<LaptopsVm> vms = this.service.GetAllLaptops();
+
             return this.View(vms);
         }
 

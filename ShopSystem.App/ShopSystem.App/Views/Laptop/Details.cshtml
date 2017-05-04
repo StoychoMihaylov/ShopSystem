@@ -10,14 +10,15 @@
             @{
                 var base64image1 = Convert.ToBase64String(Model.Image1);
                 var img1src = string.Format("data:image/gif;base64, {0}", base64image1);
-            }
-            <img id="DetailsPicture" src="@img1src" />       
-        </div>
-        <div class="col-sm-2 pull-right">
-            <p>
-                @Model.Description1
-            </p>
-        </div>
+            }                  
+               <img id="DetailsPicture" src="@img1src" />
+        </div>      
+    <div class="col-sm-2 pull-right">
+        <p>
+            @Model.Description1
+        </p>
+
+    </div>             
     </div>
     <br>
     <br>

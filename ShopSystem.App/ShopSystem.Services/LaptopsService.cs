@@ -28,6 +28,7 @@ namespace ShopSystem.Services
             }
 
             DetailsLaptopVm vm = Mapper.Map<Laptop, DetailsLaptopVm>(laptop);
+
             return vm;
         }
     }

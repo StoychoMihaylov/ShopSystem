@@ -15,6 +15,8 @@ namespace ShopSystem.Data
 
         public virtual DbSet<Monitor> Monitors { get; set; }
 
+        public virtual DbSet<Accessor> Accessoaries { get; set; }
+
         public static ShopSystemContext Create()
         {
             return new ShopSystemContext();

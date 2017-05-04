@@ -67,6 +67,14 @@ namespace ShopSystem.Data.UnitOfWork
             }
         }
 
+        public IRepository<Accessor> Accessories
+        {
+            get
+            {
+                return this.GetRepository<Accessor>();
+            }
+        }
+
         public void SaveChanges()
         {
             this.dbContext.SaveChanges();

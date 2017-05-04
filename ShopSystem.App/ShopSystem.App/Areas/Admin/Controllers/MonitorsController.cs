@@ -31,20 +31,6 @@ namespace ShopSystem.App.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Route("Monitor/Details/{id}")]
-
-        public ActionResult AdminDetailsMonitor(int id)
-        {
-            AdminDetailsMonitorsVm vm = this.service.GetMonitorDetals(id);
-            if (vm == null)
-            {
-                return HttpNotFound();
-            }
-
-            return this.View(vm);
-        }
-
-        [HttpGet]
         [Route("Monitor/Add")]
 
         public ActionResult Add()
@@ -61,17 +47,20 @@ namespace ShopSystem.App.Areas.Admin.Controllers
             {
                 foreach (var img in Images)
                 {
-                    if (img.ContentLength > (5 * 1024 * 1024))
+                    if (img != null)
                     {
-                        ModelState.AddModelError("Custom Error", "File size must be less than 5 MB");
-                        return View();
+                        if (img.ContentLength > (5 * 1024 * 1024))
+                        {
+                            ModelState.AddModelError("Custom Error", "File size must be less than 5 MB");
+                            return View();
+                        }
+                        if (img.ContentType != "image/jpeg")
+                        {
+                            ModelState.AddModelError("CustomError", "File type must be \"jpeg\"");
+                            return View();
+                        }
                     }
-                    if (img.ContentType != "image/jpeg")
-                    {
-                        ModelState.AddModelError("CustomError", "File type must be \"jpeg\"");
-                        return View();
-                    }
-
+                   
                     this.service.AddNewMonitor(bind, Images);
 
                     return RedirectToAction("AdminMonitorsList");

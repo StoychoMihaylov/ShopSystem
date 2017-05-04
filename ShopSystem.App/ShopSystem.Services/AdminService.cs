@@ -25,6 +25,27 @@ namespace ShopSystem.Services
             return vms;
         }
 
+        public IEnumerable<AdminAccessoriesVm> GetAllAccessors()
+        {
+            IEnumerable<Accessor> accessors = this.Context.Accessoaries;
+            IEnumerable<AdminAccessoriesVm> vms = Mapper.Map<IEnumerable<Accessor>, IEnumerable<AdminAccessoriesVm>>(accessors);
+
+            return vms;
+        }
+
+        public AdminDetailsAccessorVm GetAccessorDetails(int id)
+        {
+            Accessor accessor = this.Context.Accessoaries.Find(id);
+            if (accessor == null)
+            {
+                return null;
+            }
+
+            AdminDetailsAccessorVm vm = Mapper.Map<Accessor, AdminDetailsAccessorVm>(accessor);
+
+            return vm;
+        }
+
         public IEnumerable<AdminMonitorsVm> GetAllMonitors()
         {
             IEnumerable<Monitor> monitors = this.Context.Monitors;
@@ -43,6 +64,36 @@ namespace ShopSystem.Services
 
             AdminDetailsMonitorsVm vm = Mapper.Map<Monitor, AdminDetailsMonitorsVm>(monitor);
             return vm;
+        }
+
+        public void AddNewAccessor(AddAccessorBm bind, IEnumerable<HttpPostedFileBase> images)
+        {
+            Accessor accessor = Mapper.Map<AddAccessorBm, Accessor>(bind);
+            int i = 1;
+            foreach (var img in images)
+            {
+                if (img != null)
+                {
+                    switch (i)
+                    {
+                        case 1:
+                            accessor.Image1 = new byte[img.ContentLength];
+                            img.InputStream.Read(accessor.Image1, 0, img.ContentLength);
+                            break;
+                        case 2:
+                            accessor.Image2 = new byte[img.ContentLength];
+                            img.InputStream.Read(accessor.Image2, 0, img.ContentLength);
+                            break;
+                        case 3:
+                            accessor.Image3 = new byte[img.ContentLength];
+                            img.InputStream.Read(accessor.Image3, 0, img.ContentLength);
+                            break;
+                    }
+                    i++;
+                }
+                this.Context.Accessoaries.Add(accessor);
+                this.Context.SaveChanges();
+            }
         }
 
         public AdminDetailsLaptopsVm GetLaptopDetails(int id)

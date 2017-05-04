@@ -10,5 +10,7 @@ namespace ShopSystem.Data.UnitOfWork
         IRepository<Laptop> Laptops { get; }
 
         IRepository<Monitor> Monitors { get; }
+
+        IRepository<Accessor> Accessories { get; }
     }
 }

@@ -10,6 +10,7 @@ using ShopSystem.Models.ViewModels.Laptop;
 using ShopSystem.Models.ViewModels.Monitor;
 using ShopSystem.Models.ViewModels.Admin;
 using ShopSystem.Models.BindingModels;
+using ShopSystem.Models.ViewModels.Accessor;
 
 namespace ShopSystem.App
 {
@@ -39,6 +40,11 @@ namespace ShopSystem.App
                 expression.CreateMap<AddLaptopBm, Laptop>();
                 expression.CreateMap<Monitor, AdminMonitorsVm>();
                 expression.CreateMap<AddMonitorBm, Monitor>();
+                expression.CreateMap<Accessor, AccessorVm>();
+                expression.CreateMap<Accessor, DetailsAccessorVm>();
+                expression.CreateMap<Accessor, AdminAccessoriesVm>();
+                expression.CreateMap<Accessor, AdminDetailsAccessorVm>();
+                expression.CreateMap<AddAccessorBm, Accessor>();
             });
         }
     }

@@ -35,21 +35,7 @@ namespace ShopSystem.App.Areas.Admin.Controllers
             IEnumerable<AdminLaptopsVm> vms = this.service.GetAllLapops();
             return View(vms);
         }
-
-        [HttpGet]
-        [Route("Laptop/Details/{id}")]
-
-        public ActionResult AdminDetailsLaptop(int id)
-        {
-            AdminDetailsLaptopsVm vms = this.service.GetLaptopDetails(id);
-            if (vms == null)
-            {
-                return this.HttpNotFound();
-            }
-
-            return this.View(vms);
-        }
-
+     
         [HttpGet]
         [Route("Laptop/Add")]
         public ActionResult Add()
@@ -65,16 +51,19 @@ namespace ShopSystem.App.Areas.Admin.Controllers
             {
                 foreach (var img in images)
                 {
-                    if (img.ContentLength > (5 * 1024 * 1024))
+                    if (img != null)
                     {
-                        ModelState.AddModelError("CustomError", "File size must be less than 5 MB");
-                        return View();
-                    }
-                    if (img.ContentType != "image/jpeg")
-                    {
-                        ModelState.AddModelError("CustomError", "File type must be \"jpeg\"");
-                        return View();
-                    }
+                        if (img.ContentLength > (5 * 1024 * 1024))
+                        {
+                            ModelState.AddModelError("CustomError", "File size must be less than 5 MB");
+                            return View();
+                        }
+                        if (img.ContentType != "image/jpeg")
+                        {
+                            ModelState.AddModelError("CustomError", "File type must be \"jpeg\"");
+                            return View();
+                        }
+                    }                   
                 }
                 this.service.AddNewLaptop(bind, images);
 

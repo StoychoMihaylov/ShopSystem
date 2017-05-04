@@ -18,10 +18,10 @@
                 }
                 <img id="picture" src="@imgsrc" />
                 <br>
-                @Html.DisplayNameFor(laptopVm => laptopVm.ModelName):
+                @Html.DisplayNameFor(accessorVm => accessorVm.ModelName):
                 @Html.DisplayFor(vms => vm.ModelName)
                 <br>
-                @Html.DisplayNameFor(laptopVm => laptopVm.Price):
+                @Html.DisplayNameFor(accessorVm => accessorVm.Price):
                 @Html.DisplayFor(vms => vm.Price)
                 <br>
                 @Html.ActionLink("More details", "Details", "Laptop", new { id = vm.Id }, new { @class = "link" })

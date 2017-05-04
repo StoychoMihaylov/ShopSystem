@@ -102,12 +102,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\AddAccessorBm.cs" />
     <Compile Include="BindingModels\AddLaptopBm.cs" />
     <Compile Include="BindingModels\AddMonitorBm.cs" />
+    <Compile Include="EntityModels\Accessor.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Laptop.cs" />
     <Compile Include="EntityModels\Monitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Accessor\AccessorVm.cs" />
+    <Compile Include="ViewModels\Accessor\DetailsAccessorVm.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
@@ -117,6 +121,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminAccessoriesVm.cs" />
+    <Compile Include="ViewModels\Admin\AdminDetailsAccessorVm.cs" />
     <Compile Include="ViewModels\Admin\AdminDetailsLaptopsVm.cs" />
     <Compile Include="ViewModels\Admin\AdminDetailsMonitorsVm.cs" />
     <Compile Include="ViewModels\Admin\AdminLaptopsVm.cs" />

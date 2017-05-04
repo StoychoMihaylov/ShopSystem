@@ -190,9 +190,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccessoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LaptopsController.cs" />
     <Compile Include="Areas\Admin\Controllers\MonitorsController.cs" />
+    <Compile Include="Controllers\AccessorController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -237,11 +239,11 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Laptops\AdminLaptopsList.cshtml" />
-    <Content Include="Areas\Admin\Views\Laptops\AdminDetailsLaptop.cshtml" />
     <Content Include="Areas\Admin\Views\Laptops\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Monitors\AdminMonitorsList.cshtml" />
-    <Content Include="Areas\Admin\Views\Monitors\AdminDetailsMonitor.cshtml" />
     <Content Include="Areas\Admin\Views\Monitors\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Accessories\AdminAccessoriesList.cshtml" />
+    <Content Include="Areas\Admin\Views\Accessories\Add.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -301,6 +303,8 @@
     <Content Include="Views\Laptop\Details.cshtml" />
     <Content Include="Views\Monitor\List.cshtml" />
     <Content Include="Views\Monitor\Details.cshtml" />
+    <Content Include="Views\Accessor\List.cshtml" />
+    <Content Include="Views\Accessor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
