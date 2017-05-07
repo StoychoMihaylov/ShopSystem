@@ -14,6 +14,6 @@ namespace ShopSystem.Services
             this.Context = new ShopSystemContext();
         }
 
-        protected ShopSystemContext Context { get; }
+        protected ShopSystemContext Context { get;}
     }
 }

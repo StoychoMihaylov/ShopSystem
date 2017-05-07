@@ -244,6 +244,8 @@
     <Content Include="Areas\Admin\Views\Monitors\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Accessories\AdminAccessoriesList.cshtml" />
     <Content Include="Areas\Admin\Views\Accessories\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Laptops\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Laptops\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

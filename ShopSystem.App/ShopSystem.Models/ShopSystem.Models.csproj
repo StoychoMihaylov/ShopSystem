@@ -122,9 +122,11 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Admin\AdminAccessoriesVm.cs" />
+    <Compile Include="ViewModels\Admin\AdminDeleteLaptopVm.cs" />
     <Compile Include="ViewModels\Admin\AdminDetailsAccessorVm.cs" />
     <Compile Include="ViewModels\Admin\AdminDetailsLaptopsVm.cs" />
     <Compile Include="ViewModels\Admin\AdminDetailsMonitorsVm.cs" />
+    <Compile Include="ViewModels\Admin\AdminEditLaptopVm.cs" />
     <Compile Include="ViewModels\Admin\AdminLaptopsVm.cs" />
     <Compile Include="ViewModels\Admin\AdminMonitorsVm.cs" />
     <Compile Include="ViewModels\Laptop\DetailsLaptopVm.cs" />

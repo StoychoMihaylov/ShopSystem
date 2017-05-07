@@ -45,6 +45,9 @@ namespace ShopSystem.App
                 expression.CreateMap<Accessor, AdminAccessoriesVm>();
                 expression.CreateMap<Accessor, AdminDetailsAccessorVm>();
                 expression.CreateMap<AddAccessorBm, Accessor>();
+                expression.CreateMap<Laptop, AdminDeleteLaptopVm>();
+                expression.CreateMap<Laptop, AdminEditLaptopVm>();
+                expression.CreateMap<AdminEditLaptopVm, Laptop>();
             });
         }
     }

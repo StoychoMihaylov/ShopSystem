@@ -26,6 +26,9 @@
                 @Html.DisplayNameFor(laptopVm => laptopVm.Price):
                 @Html.DisplayFor(vms => vm.Price)
                 <br>
+                @Html.ActionLink("Edit", "Edit", "Laptops", new { id = vm.Id }, new { @class = "btn btn-primary"})
+                @Html.ActionLink("Delete", "Delete", "Laptops", new { id = vm.Id }, new { @class = "btn btn-danger"})
+                <br>
             </div>
         }
     </div>

@@ -12,6 +12,7 @@ using System.IO;
 using System.Web.UI.WebControls;
 using System.Web.ModelBinding;
 using static System.Net.Mime.MediaTypeNames;
+using System.Data.Entity;
 
 namespace ShopSystem.Services
 {
@@ -94,6 +95,48 @@ namespace ShopSystem.Services
                 this.Context.Accessoaries.Add(accessor);
                 this.Context.SaveChanges();
             }
+        }
+
+        public AdminEditLaptopVm GetLaptopTowardEdit(int? id)
+        {
+            Laptop laptop = this.Context.Laptops.Find(id);
+            if (laptop == null)
+            {
+                return null;
+            }
+
+            AdminEditLaptopVm vm = Mapper.Map<Laptop, AdminEditLaptopVm>(laptop);
+            return vm;
+        }
+
+        public void DeleteLaptop(int? id)
+        {
+            Laptop laptop = this.Context.Laptops.Find(id);
+            this.Context.Laptops.Remove(laptop);
+            this.Context.SaveChanges();
+        }
+
+        public void EditLaptop(AdminEditLaptopVm lp)
+        {
+            var laptop = Mapper.Map<AdminEditLaptopVm, Laptop>(lp);
+            
+            //this.Context.Entry(laptop).CurrentValues.SetValues(laptop);
+            this.Context.Laptops.Attach(laptop);
+            this.Context.Entry(laptop).State = EntityState.Modified;
+            this.Context.SaveChanges();
+        }
+
+        public AdminDeleteLaptopVm GetLaptopTowardDelete(int? id)
+        {
+            Laptop laptop = this.Context.Laptops.Find(id);
+            if (laptop == null)
+            {
+                return null;
+            }
+
+            AdminDeleteLaptopVm vm = Mapper.Map<Laptop, AdminDeleteLaptopVm>(laptop);
+
+            return vm;
         }
 
         public AdminDetailsLaptopsVm GetLaptopDetails(int id)

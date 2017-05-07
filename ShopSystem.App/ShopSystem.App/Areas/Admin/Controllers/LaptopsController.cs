@@ -28,7 +28,7 @@ namespace ShopSystem.App.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Route("Laptops")]
+        [Route("List")]
 
         public ActionResult AdminLaptopsList()
         {
@@ -68,6 +68,78 @@ namespace ShopSystem.App.Areas.Admin.Controllers
                 this.service.AddNewLaptop(bind, images);
 
                 return RedirectToAction("AdminLaptopsList");
+            }
+
+            return this.View();
+        }
+
+        [HttpGet]
+        [Route("Delete/{id}")]
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            AdminDeleteLaptopVm vm = this.service.GetLaptopTowardDelete(id);
+
+            if (vm == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            return this.View(vm);
+        }
+
+        [HttpPost]
+        [Route("Delete/{id}")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            this.service.DeleteLaptop(id);
+            
+            return RedirectToAction("AdminLaptopsList");
+        }
+
+        [HttpGet]
+        [Route("Edit/{id}")]
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AdminEditLaptopVm vm = this.service.GetLaptopTowardEdit(id);
+            if (vm == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            return this.View(vm);
+        }
+
+        [HttpPost]
+        [Route("Edit/{id}")]
+
+        public ActionResult EditConfirmed(AdminEditLaptopVm laptop)
+        {
+            if (ModelState.IsValid)
+            {
+                if (laptop == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+          
+                this.service.EditLaptop(laptop);
+
+                return RedirectToAction("AdminLaptopsList");
+                
             }
 
             return this.View();
